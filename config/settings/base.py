@@ -19,7 +19,9 @@ DJANGO_APPS = [
 
 THIRDY_APPS = []
 
-OWNER_APPS = []
+OWNER_APPS = [
+    "accounts.apps.AccountsConfig",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRDY_APPS + OWNER_APPS
 
@@ -53,6 +55,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "config.wsgi.application"
+
+# Owner User
+AUTH_USER_MODEL = "accounts.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
