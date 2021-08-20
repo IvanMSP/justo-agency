@@ -11,34 +11,35 @@
                 <div class="card login_page shadow rounded border-0">
                     <div class="card-body">
                         <h4 class="card-title text-center">Signup</h4>
-                        <form class="login-form mt-4">
+                        <form method="POST" class="login-form mt-4">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group position-relative">
                                         <label>First name <span class="text-danger">*</span></label>
                                         <i data-feather="user" class="fea icon-sm icons"></i>
-                                        <input type="text" class="form-control pl-5" placeholder="First Name" name="s" required="">
+                                        {{ form.first_name }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group position-relative">
                                         <label>Last name <span class="text-danger">*</span></label>
                                         <i data-feather="user-check" class="fea icon-sm icons"></i>
-                                        <input type="text" class="form-control pl-5" placeholder="Last Name" name="s" required="">
+                                        {{ form.last_name }}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group position-relative">
                                         <label>Your Email <span class="text-danger">*</span></label>
                                         <i data-feather="mail" class="fea icon-sm icons"></i>
-                                        <input type="email" class="form-control pl-5" placeholder="Email" name="email" required="">
+                                        {{ form.email }}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group position-relative">
                                         <label>Password <span class="text-danger">*</span></label>
                                         <i data-feather="key" class="fea icon-sm icons"></i>
-                                        <input type="password" class="form-control pl-5" placeholder="Password" required="">
+                                        {{ form.password }}
                                     </div>
                                 </div>
 
@@ -46,12 +47,12 @@
                                   <div class="form-group position-relative">
                                       <label>Repeat Password <span class="text-danger">*</span></label>
                                       <i data-feather="key" class="fea icon-sm icons"></i>
-                                      <input type="password" class="form-control pl-5" placeholder="Repeat Password" required="">
+                                      {{ form.password2 }}
                                   </div>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <button class="btn btn-primary btn-block">Register</button>
+                                    <button type="submit" class="btn btn-primary btn-block">Register</button>
                                 </div>
                                 <div class="mx-auto">
                                     <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="{% url 'login' %}" class="text-dark font-weight-bold">Sign in</a></p>

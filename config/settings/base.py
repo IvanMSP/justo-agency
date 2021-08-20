@@ -21,6 +21,7 @@ THIRDY_APPS = []
 
 OWNER_APPS = [
     "accounts.apps.AccountsConfig",
+    "hits.apps.HitsConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRDY_APPS + OWNER_APPS
@@ -37,6 +38,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "config.urls"
+LOGIN_URL = "/webapp/login"
 
 TEMPLATES = [
     {

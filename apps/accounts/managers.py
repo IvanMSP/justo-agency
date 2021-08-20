@@ -1,5 +1,6 @@
 # Django Core Libraries
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.db import models
 
 
 class UserManager(BaseUserManager):
@@ -35,3 +36,8 @@ class UserManager(BaseUserManager):
             raise ValueError("Superuser must have is_superuser=True.")
 
         return self._create_user(email, password, **extra_fields)
+
+
+class HitmanManager(models.Manager):
+    def create_profile(self, user):
+        return self.create(user=user)
