@@ -92,7 +92,7 @@ class RegisterView(View):
                 for field in form:
                     for error in field.errors:
                         messages.info(request, error)
-            context = {"form": RegisterForm()}
+            context = {"form": form}
             return render(request, self.template_name, context)
 
 
