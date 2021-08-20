@@ -91,7 +91,7 @@ class RegisterView(View):
             if form.errors:
                 for field in form:
                     for error in field.errors:
-                        messages.add_message(request, 40, error)
+                        messages.info(request, error)
             context = {"form": RegisterForm()}
             return render(request, self.template_name, context)
 
@@ -100,5 +100,9 @@ def logout_view(request):
     """
     Logout Function
     """
+    messages.success(
+        request,
+        "¡Hasta pronto!",
+    )
     logout(request)
     return redirect("login")
