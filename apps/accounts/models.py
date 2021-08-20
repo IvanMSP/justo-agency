@@ -2,12 +2,10 @@
 from django.db import models
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.base_user import AbstractBaseUser
-from django.db.models import manager
-from django.db.models.deletion import PROTECT
 
 # Owner's Libraries
-from apps.reusable.constants import REQUIRED
-from .managers import UserManager
+from apps.reusable.constants import BLANK, REQUIRED
+from .managers import UserManager, HitmanManager
 from reusable.models import TimeStampModel
 
 
@@ -16,7 +14,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, **REQUIRED)
     first_name = models.CharField(max_length=150, **REQUIRED)
     last_name = models.CharField(max_length=150, **REQUIRED)
-    bio = models.TextField(**REQUIRED)
+    bio = models.TextField(**BLANK)
     status = models.BooleanField(default=True)
     is_boss = models.BooleanField(default=False)
     is_manager = models.BooleanField(default=False)
@@ -59,13 +57,14 @@ class GroupHitman(TimeStampModel):
 
 
 class ProfileHitman(TimeStampModel):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    objects = HitmanManager()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, **REQUIRED)
     group_hitman = models.ForeignKey(
         GroupHitman,
-        on_delete=PROTECT,
+        on_delete=models.PROTECT,
         related_name="hitmans",
         verbose_name="Grupo",
-        **REQUIRED,
+        **BLANK,
     )
 
     class Meta:

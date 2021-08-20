@@ -2,7 +2,7 @@
 from django.db import models
 
 # Owner Libraries
-from apps.accounts.models import User
+from accounts.models import User
 from apps.reusable.constants import BLANK, REQUIRED
 from reusable.models import TimeStampModel
 
@@ -14,14 +14,14 @@ class Hit(TimeStampModel):
     assignee_by = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
-        related_name="hits",
+        related_name="hits_assignee_by",
         verbose_name="Asignado por",
         **REQUIRED
     )
     assignee = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
-        related_name="hits",
+        related_name="hits_assignee",
         verbose_name="Asignados",
         **REQUIRED
     )
