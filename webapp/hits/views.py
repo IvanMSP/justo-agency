@@ -1,14 +1,12 @@
 # Django Core
-from webapp.accounts.views import logout_view
-from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import View
-from django.views.generic import ListView
-from django.contrib.auth import login, logout
+from django.views.generic import ListView, DetailView
+from django.views.generic.base import View
 
 # Owner
 from hits.models import Hit
+from .forms import HitForm
 
 
 class HitsView(LoginRequiredMixin, ListView):
@@ -34,3 +32,15 @@ class HitsView(LoginRequiredMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+class HitDetailView(LoginRequiredMixin, View):
+    template_name = "hits/hit-detail.html"
+
+    def get(self, request, pk):
+        instance = get_object_or_404(Hit, pk=pk)
+        form = HitForm(instance=instance)
+        context = {
+            "form": form,
+        }
+        return render(request, self.template_name, context)
