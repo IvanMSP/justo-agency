@@ -4,6 +4,7 @@ from django import forms
 # Onwer
 from hits.models import Hit
 from accounts.models import User
+from reusable.choices import StatusType
 
 
 class HitForm(forms.ModelForm):
@@ -15,6 +16,7 @@ class HitForm(forms.ModelForm):
             self.fields["description"].widget.attrs["readonly"] = True
             self.fields["assignee_by"].widget.attrs["disabled"] = True
             self.fields["assignee"].widget.attrs["disabled"] = True
+            # self.fields["status"].widget.attrs["disabled"] = True
 
     title = forms.CharField(
         widget=forms.TextInput(
@@ -34,6 +36,11 @@ class HitForm(forms.ModelForm):
     )
     assignee = forms.ModelChoiceField(
         queryset=User.objects.filter(is_hitman=True),
+        widget=forms.Select(attrs={"class": "form-control pl-5"}),
+    )
+
+    status = forms.ChoiceField(
+        choices=StatusType.choices(),
         widget=forms.Select(attrs={"class": "form-control pl-5"}),
     )
 

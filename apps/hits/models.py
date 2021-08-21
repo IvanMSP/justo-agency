@@ -6,13 +6,15 @@ from django.db import models
 from accounts.models import User
 from apps.reusable.constants import BLANK, REQUIRED
 from reusable.models import TimeStampModel
-from .managers import HitsAssignee
+from reusable.choices import StatusType
 
 
 class Hit(TimeStampModel):
     title = models.CharField(max_length=120, verbose_name="Titulo", **REQUIRED)
     description = models.TextField(verbose_name="Descripción", **BLANK)
-    status = models.BooleanField(verbose_name="Estatus", default=True)
+    status = models.PositiveSmallIntegerField(
+        verbose_name="Estatus", choices=StatusType.choices()
+    )
     assignee_by = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
