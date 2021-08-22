@@ -32,3 +32,6 @@ class Hit(TimeStampModel):
 
     def __str__(self) -> str:
         return self.title
+
+    def get_status_label(self):
+        return StatusType(self.status).name.title()

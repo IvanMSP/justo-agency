@@ -12,6 +12,7 @@
                 <div class="card login-page bg-white shadow rounded border-0">
                     <div class="card-body">
                         <h4 class="card-title text-center">Hit Detail</h4>
+                        <p class="text-center">Current Status: {{ instance.get_status_label }}</p>
                         <form method="POST" class="login-form mt-4">
                             {% csrf_token %}
                             <div class="row">

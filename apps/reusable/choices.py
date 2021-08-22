@@ -1,16 +1,18 @@
 # OS
-from enum import Enum
+from enum import IntEnum
 
 
-class StatusType(Enum):
-    assigned = (1, "Assigned")
-    failed = (2, "Failed")
-    completed = (3, "Completed")
-
-    @classmethod
-    def get_value(cls, member):
-        return cls[member].value[0]
+class StatusType(IntEnum):
+    assigned = 1
+    failed = 2
+    completed = 3
 
     @classmethod
     def choices(cls):
-        return [x.value for x in cls]
+        return [(key.value, key.name) for key in cls]
+
+    @classmethod
+    def choices_hitman(cls):
+        choices = [(key.value, key.name) if key.value != 1 else None for key in cls]
+        del choices[0]
+        return choices

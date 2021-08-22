@@ -1,4 +1,5 @@
 # Django Core
+from apps.reusable.choices import StatusType
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
@@ -38,9 +39,12 @@ class HitDetailView(LoginRequiredMixin, View):
     template_name = "hits/hit-detail.html"
 
     def get(self, request, pk):
+        kwargs = dict()
+        kwargs["user"] = request.user
         instance = get_object_or_404(Hit, pk=pk)
-        form = HitForm(instance=instance)
+        form = HitForm(instance=instance, **kwargs)
         context = {
+            "instance": instance,
             "form": form,
         }
         return render(request, self.template_name, context)
