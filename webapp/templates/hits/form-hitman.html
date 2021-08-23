@@ -1,0 +1,8 @@
+<div class="form-group position-relative">
+    <label>Status <span class="text-danger">*</span></label>
+    {% for error in form.status.errors %}
+        <label class="text-danger">{{error}}</label>
+    {% endfor %}
+    <i data-feather="feather" class="fea icon-sm icons"></i>
+    {{ form.status }}
+</div>

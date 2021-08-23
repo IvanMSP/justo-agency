@@ -7,15 +7,7 @@
                 <img src="{% static 'images/bg.png' %}" class="img-fluid" alt="" width="650" height="650">
                 <div class="job-overlay bg-white"></div>
             </div>
-            <ul class="list-unstyled head mb-0">
-                <li class="badge badge-success badge-pill">
-                  {% if hit.status %}
-                    Activo
-                  {% else %}
-                    Completado
-                  {% endif %}
-                </li>
-            </ul>
+            {% include "hits/status-hit.html" %}
         </div>
 
         <div class="card-body content position-relative">

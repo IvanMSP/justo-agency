@@ -3,7 +3,7 @@ from apps.accounts.managers import HitmanManager
 from django.db import models
 
 # Owner Libraries
-from accounts.models import User
+from accounts.models import GroupHitman, User
 from apps.reusable.constants import BLANK, REQUIRED
 from reusable.models import TimeStampModel
 from reusable.choices import StatusType
@@ -27,6 +27,13 @@ class Hit(TimeStampModel):
         on_delete=models.PROTECT,
         related_name="assignee",
         verbose_name="Asignados",
+        **REQUIRED
+    )
+    group = models.ForeignKey(
+        GroupHitman,
+        related_name="hits",
+        verbose_name="Grupo",
+        on_delete=models.PROTECT,
         **REQUIRED
     )
 

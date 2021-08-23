@@ -9,17 +9,6 @@ from reusable.choices import StatusType
 
 
 class HitForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop("user")
-        super(HitForm, self).__init__(*args, **kwargs)
-        instance = getattr(self, "instance", None)
-        if instance and instance.id:
-            if self.user.is_hitman is True:
-                self.fields["title"].widget.attrs["readonly"] = True
-                self.fields["description"].widget.attrs["readonly"] = True
-                self.fields["assignee_by"].widget.attrs["disabled"] = True
-                self.fields["assignee"].widget.attrs["disabled"] = True
-                self.fields["status"].choices = StatusType.choices_hitman()
 
     title = forms.CharField(
         widget=forms.TextInput(

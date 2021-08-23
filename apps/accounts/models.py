@@ -45,7 +45,11 @@ class GroupHitman(TimeStampModel):
         **REQUIRED,
     )
     manager_group = models.OneToOneField(
-        User, on_delete=models.PROTECT, verbose_name="Manager", **REQUIRED
+        User,
+        on_delete=models.PROTECT,
+        related_name="group_hitman",
+        verbose_name="Manager",
+        **REQUIRED,
     )
 
     class Meta:

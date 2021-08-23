@@ -12,76 +12,37 @@
                 <div class="card login-page bg-white shadow rounded border-0">
                     <div class="card-body">
                         <h4 class="card-title text-center">Hit Detail</h4>
-                        <p class="text-center">Current Status: {{ instance.get_status_label }}</p>
+                        <p>Title: {{ instance.title|title }}</p>
+                        <p>Description: {{ instance.description }}</p>
+                        <p>Assignee_by: {{ instance.assignee_by }}</p>
+                        <p>Assignee: {{ instance.assignee.get_full_name }}</p>
+                        <p>Current Status: {{ instance.get_status_label }}</p>
                         <form method="POST" class="login-form mt-4">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="form-group position-relative">
-                                        <label>Title <span class="text-danger">*</span></label>
-                                        {% for error in form.title.errors %}
-                                            <label class="text-danger">{{error}}</label>
-                                        {% endfor %}
-                                        <i data-feather="feather" class="fea icon-sm icons"></i>
-                                        {{ form.title }}
+                                    <div class="col-lg-12">
+                                        {% if request.user.is_hitman %}
+                                            {% include "hits/form-hitman.html" %}
+                                        {% else %}
+                                            {% include "hits/form-manager-boss.html" %}
+                                        {% endif %}
                                     </div>
                                 </div>
-  
-                                <div class="col-lg-12">
-                                    <div class="form-group position-relative">
-                                        <label>Description <span class="text-danger">*</span></label>
-                                        {% for error in form.description.errors %}
-                                            <label class="text-danger">{{error}}</label>
-                                        {% endfor %}
-                                        <i data-feather="align-justify" class="fea icon-sm icons"></i>
-                                        {{form.description}}
-                                    </div>
-                                </div>
+                            </div>
 
-                                <div class="col-lg-12">
-                                    <div class="form-group position-relative">
-                                        <label>Asignado por: <span class="text-danger">*</span></label>
-                                        {% for error in form.assignee_by.errors %}
-                                            <label class="text-danger">{{error}}</label>
-                                        {% endfor %}
-                                        <i data-feather="user-plus" class="fea icon-sm icons"></i>
-                                        {{form.assignee_by}}
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group position-relative">
-                                        <label>Asignado a: <span class="text-danger">*</span></label>
-                                        {% for error in form.assignee.errors %}
-                                            <label class="text-danger">{{error}}</label>
-                                        {% endfor %}
-                                        <i data-feather="user-check" class="fea icon-sm icons"></i>
-                                        {{form.assignee}}
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group position-relative">
-                                        <label>Status: <span class="text-danger">*</span></label>
-                                        {% for error in form.status.errors %}
-                                            <label class="text-danger">{{error}}</label>
-                                        {% endfor %}
-                                        <i data-feather="activity" class="fea icon-sm icons"></i>
-                                        {{form.status}}
-                                    </div>
-                                </div>
-
+                            {% if instance.status == 1 %}
                                 <div class="col-lg-12 mb-0">
                                     <button type="submit" class="btn btn-primary btn-block">Update</button>
                                 </div>
-                            </div>
+                            {% endif %}
                         </form>
                     </div>
                 </div><!---->
             </div><!--end col-->
         </div><!--end row-->
     </div> <!--end container-->
-  </section><!--end section-->
-  <!-- Hero End -->
+</section><!--end section-->
+<!-- Hero End -->
 
 {% endblock content %}
