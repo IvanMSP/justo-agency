@@ -1,0 +1,13 @@
+<!-- PAGINATION START -->
+<div class="col-12 mt-4 pt-2">
+    <ul class="pagination justify-content-center mb-0">
+        {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><i data-feather="arrow-left-circle" class="fea icon-sm"></i> Anterior</a></li>
+        {% endif %}
+        <li class="page-item active"><a class="page-link" href="javascript:void(0)">{{ page_obj.number }}</a></li>
+        {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">Siguiente <i data-feather="arrow-right-circle" class="fea icon-sm"></i></a></li>
+        {% endif %}
+    </ul>
+</div><!--end col-->
+<!-- PAGINATION END -->

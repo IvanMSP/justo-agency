@@ -92,7 +92,7 @@ class RegisterView(View):
                 for field in form:
                     for error in field.errors:
                         messages.info(request, error)
-            context = {"form": RegisterForm()}
+            context = {"form": form}
             return render(request, self.template_name, context)
 
 
@@ -106,3 +106,8 @@ def logout_view(request):
     )
     logout(request)
     return redirect("login")
+
+
+def handler_404_requests(request, exception, template_name="common/404.html"):
+    template_name = "common/404.html"
+    return render(request, template_name, status=404)

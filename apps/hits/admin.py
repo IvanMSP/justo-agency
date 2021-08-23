@@ -1,3 +1,8 @@
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# Owner
+from .models import Hit
+
+
+admin.site.register(Hit)

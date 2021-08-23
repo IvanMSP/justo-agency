@@ -1,0 +1,15 @@
+<ul class="list-unstyled head mb-0">
+    {% if hit.status == 1 %}
+    <li class="badge badge-info badge-pill">
+        {{ hit.get_status_label }}
+    </li>
+    {% elif hit.status == 2 %}
+    <li class="badge badge-danger badge-pill">
+        {{ hit.get_status_label }}
+    </li>
+    {% else %}
+    <li class="badge badge-success badge-pill">
+        {{ hit.get_status_label }}
+    </li>
+    {% endif %}
+</ul>
