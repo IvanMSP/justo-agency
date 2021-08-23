@@ -108,6 +108,44 @@ Ready for run project
   python manage.py runserver
 ```
 
+## Pre-Commit
+
+Precommit was configured with black and flake-8, respectively a code formatter and a linter, pre-commit checks your code every time you commit.
+
+### (.pre-commit-config.yaml)
+
+  ```bash
+  repos:
+  -   repo: https://github.com/ambv/black
+      rev: 20.8b1
+      hooks:
+      - id: black
+        language_version: python3.9.1
+  -   repo: https://gitlab.com/pycqa/flake8
+      rev: 3.9.0
+      hooks:
+      - id: flake8
+
+  # Optional hook. Check dependencies are safe
+  -   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+      rev: v1.2.1
+      hooks:
+      -   id: python-safety-dependencies-check
+  ```
+
+### File configuration for Black and Flake8
+```bash
+  black.toml
+
+  .flake8
+```
+
+### Install pre-commit into project
+
+  ```bash
+  pre-commit install
+  ```
+
 ## Next Steps
 
 ## Deploy
@@ -126,3 +164,9 @@ Ready for run project
 ### Architecture
 
 ![Architecture](https://i.imgur.com/gc9xnHc.png)
+
+
+### Notes:
+
+In learning process:
+CI Integration with Jenkins, for ease deploy. :)
