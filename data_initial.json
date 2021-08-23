@@ -1,0 +1,282 @@
+[
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$QcSozTPJbKtKL0jmkYTlsC$euQMHuRd/laY5g+NEplOfLjGhQ0VpyZpsxHd8cDVFNg=",
+    "last_login": "2021-08-23T20:20:33.929Z",
+    "is_superuser": true,
+    "email": "admin@agency.com",
+    "first_name": "",
+    "last_name": "",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": false,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$zxwr4o4Q3FQPNNGdqO8ZlP$eCGAJDeOgPImG9L6YZCH2JKdYkdZybQ/VNQQpChvyXA=",
+    "last_login": "2021-08-23T20:26:46.910Z",
+    "is_superuser": false,
+    "email": "boss@gmail.com",
+    "first_name": "Boss",
+    "last_name": "Big",
+    "bio": "",
+    "status": true,
+    "is_boss": true,
+    "is_manager": false,
+    "is_hitman": false,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$ZpnR61Lqb6WUfI0TUGAFYb$/DApPM+mz7vUtQzIDTT1eiq4vXgzZz4Iw/Rut2zjWMY=",
+    "last_login": "2021-08-23T20:27:16.031Z",
+    "is_superuser": false,
+    "email": "manager1@gmail.com",
+    "first_name": "Manager",
+    "last_name": "1",
+    "bio": "",
+    "status": true,
+    "is_boss": false,
+    "is_manager": true,
+    "is_hitman": false,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$AbAuOz217OCyNAQBliq36A$AIKlQrGv+Kf4qpfxEZ7U02Icvxdb92BfdrWjGX6SaRY=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "manager2@gmail.com",
+    "first_name": "Manager",
+    "last_name": "2",
+    "bio": "",
+    "status": true,
+    "is_boss": false,
+    "is_manager": true,
+    "is_hitman": false,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$NJL9SkkEUbOPSd1L0CzlEI$Rg/3bmoqUkD4UFPi6Do7IzgxH8UcfJexlrJhjTj+93c=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "manager3@gmail.com",
+    "first_name": "Manager",
+    "last_name": "3",
+    "bio": "",
+    "status": true,
+    "is_boss": false,
+    "is_manager": true,
+    "is_hitman": false,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Jh5v0sxqKfmbzp5umlKvGj$4VW74AF4gcbvb3lhXM0oL/ynWHO19F39Hl3Sy+5nyIU=",
+    "last_login": "2021-08-23T20:27:04.875Z",
+    "is_superuser": false,
+    "email": "hitman1@agency.com",
+    "first_name": "Hitman",
+    "last_name": "1",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$FeZDr7jAnotPSuFOqGMueH$5OSXk3ncR/dq8AGFgA803tYSTLjzeydehV14Ac+jHUg=",
+    "last_login": "2021-08-23T20:23:56.784Z",
+    "is_superuser": false,
+    "email": "hitman2@agency.com",
+    "first_name": "Hitman",
+    "last_name": "2",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Lh07tOyh4a7F99E8DQHTeE$Ncfj3vmzVogjczqIV3uiLXnsllI4Z54S9cpBcrG2pTU=",
+    "last_login": "2021-08-23T20:24:19.802Z",
+    "is_superuser": false,
+    "email": "hitman3@agency.com",
+    "first_name": "Hitman",
+    "last_name": "3",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$wNAKSce5Kxft4eRIDZ8x53$/Hun1lRx8KvNz/OMIspeTqVwGjx8+Itc2mWM10DSiko=",
+    "last_login": "2021-08-23T20:24:55.284Z",
+    "is_superuser": false,
+    "email": "hitman4@agency.com",
+    "first_name": "Hitman",
+    "last_name": "4",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$57vgyqYvS7a6SKCCYgKeo6$bT0bFHSXvouQb+OlXXe0rta6//xHGVeX/gDzwSrQ1rE=",
+    "last_login": "2021-08-23T20:25:18.417Z",
+    "is_superuser": false,
+    "email": "hitman5@agency.com",
+    "first_name": "Hitman",
+    "last_name": "5",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$eh4tSEfhZJYJu7YY1KQDvv$sPfvjJHq96BqIwQlgFYhgVPXVfy2NErM95YEEXwQRME=",
+    "last_login": "2021-08-23T20:25:35.409Z",
+    "is_superuser": false,
+    "email": "hitman6@agency.com",
+    "first_name": "Hitman",
+    "last_name": "6",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$gETQsM15AXWFxRq1PKbWNg$sXaneqpyYa+JkzK0qpBsa3W+cN066APYm2zQC0Cc6x4=",
+    "last_login": "2021-08-23T20:25:54.665Z",
+    "is_superuser": false,
+    "email": "hitman7@agency.com",
+    "first_name": "Hitman",
+    "last_name": "7",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$hMoFHT9ijCm3bgFzZs3aTp$c4UU9nyrXR9Oa646QqxdMhgxR084noRahTM9/ak8U/c=",
+    "last_login": "2021-08-23T20:26:13.688Z",
+    "is_superuser": false,
+    "email": "hitman8@agency.com",
+    "first_name": "Hitman",
+    "last_name": "8",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$DKJ71J8lyZMSTC39xkoPlq$jCm63cu/eq+tUweS7tNA/ucBvDhGz/DyY3bRa2qvwbU=",
+    "last_login": "2021-08-23T20:26:32.505Z",
+    "is_superuser": false,
+    "email": "hitman9@agency.com",
+    "first_name": "Hitman",
+    "last_name": "9",
+    "bio": null,
+    "status": true,
+    "is_boss": false,
+    "is_manager": false,
+    "is_hitman": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
