@@ -50,6 +50,7 @@
                                     </div>
                                 </div>
 
+                                {% if request.user.is_boss %}
                                 <div class="col-lg-12">
                                     <div class="form-group position-relative">
                                         <label>Grupo: <span class="text-danger">*</span></label>
@@ -60,6 +61,9 @@
                                         {{form.group}}
                                     </div>
                                 </div>
+                                {% else %}
+                                {{form.group}}
+                                {% endif %}
 
                                 <div class="col-lg-12 mb-0">
                                     <button type="submit" class="btn btn-primary btn-block">Update</button>

@@ -18,6 +18,8 @@ class HitForm(forms.ModelForm):
             self.fields["assignee"].queryset = user.group_hitman.hitmans.all().exclude(
                 user__status=False
             )
+            self.fields["group"].widget = forms.HiddenInput()
+            self.fields["group"].initial = user.group_hitman
         else:
             self.fields["assignee"].queryset = (
                 User.objects.all().exclude(status=False).exclude(is_staff=True)
@@ -53,6 +55,11 @@ class HitForm(forms.ModelForm):
         choices=StatusType.choices(),
         widget=forms.HiddenInput(attrs={"class": "form-control pl-5"}),
     )
+
+    def clean_assignee(self):
+        data = self.data
+        profile = data["assignee"]
+        return User.objects.get(pk=profile)
 
     class Meta:
         model = Hit
