@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$QcSozTPJbKtKL0jmkYTlsC$euQMHuRd/laY5g+NEplOfLjGhQ0VpyZpsxHd8cDVFNg=",
-    "last_login": "2021-08-23T20:20:33.929Z",
+    "last_login": "2021-08-23T22:38:11.654Z",
     "is_superuser": true,
     "email": "admin@agency.com",
     "first_name": "",
@@ -24,7 +24,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$260000$zxwr4o4Q3FQPNNGdqO8ZlP$eCGAJDeOgPImG9L6YZCH2JKdYkdZybQ/VNQQpChvyXA=",
-    "last_login": "2021-08-23T20:26:46.910Z",
+    "last_login": "2021-08-23T23:21:35.230Z",
     "is_superuser": false,
     "email": "boss@gmail.com",
     "first_name": "Boss",
@@ -44,7 +44,7 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$260000$ZpnR61Lqb6WUfI0TUGAFYb$/DApPM+mz7vUtQzIDTT1eiq4vXgzZz4Iw/Rut2zjWMY=",
-    "last_login": "2021-08-23T20:27:16.031Z",
+    "last_login": "2021-08-23T23:58:49.544Z",
     "is_superuser": false,
     "email": "manager1@gmail.com",
     "first_name": "Manager",
@@ -104,13 +104,13 @@
   "pk": 6,
   "fields": {
     "password": "pbkdf2_sha256$260000$Jh5v0sxqKfmbzp5umlKvGj$4VW74AF4gcbvb3lhXM0oL/ynWHO19F39Hl3Sy+5nyIU=",
-    "last_login": "2021-08-23T20:27:04.875Z",
+    "last_login": "2021-08-23T22:36:31.042Z",
     "is_superuser": false,
     "email": "hitman1@agency.com",
     "first_name": "Hitman",
     "last_name": "1",
-    "bio": null,
-    "status": true,
+    "bio": "",
+    "status": false,
     "is_boss": false,
     "is_manager": false,
     "is_hitman": true,
@@ -277,6 +277,132 @@
     "is_staff": false,
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "accounts.grouphitman",
+  "pk": 1,
+  "fields": {
+    "created": "2021-08-23T22:40:02.582Z",
+    "modified": "2021-08-23T22:40:02.582Z",
+    "name": "Panchos",
+    "description": "GRoup",
+    "boss": 2,
+    "manager_group": 3
+  }
+},
+{
+  "model": "accounts.grouphitman",
+  "pk": 2,
+  "fields": {
+    "created": "2021-08-23T22:40:15.504Z",
+    "modified": "2021-08-23T22:40:15.504Z",
+    "name": "Justos",
+    "description": "group",
+    "boss": 2,
+    "manager_group": 4
+  }
+},
+{
+  "model": "accounts.grouphitman",
+  "pk": 3,
+  "fields": {
+    "created": "2021-08-23T22:40:31.723Z",
+    "modified": "2021-08-23T22:40:31.723Z",
+    "name": "Boxer",
+    "description": "Hitman",
+    "boss": 2,
+    "manager_group": 5
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 1,
+  "fields": {
+    "created": "2021-08-23T22:40:43.910Z",
+    "modified": "2021-08-23T22:40:43.910Z",
+    "user": 6,
+    "group_hitman": 1
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 2,
+  "fields": {
+    "created": "2021-08-23T22:40:51.313Z",
+    "modified": "2021-08-23T22:40:51.314Z",
+    "user": 7,
+    "group_hitman": 2
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 3,
+  "fields": {
+    "created": "2021-08-23T22:40:55.890Z",
+    "modified": "2021-08-23T22:40:55.890Z",
+    "user": 8,
+    "group_hitman": 3
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 4,
+  "fields": {
+    "created": "2021-08-23T22:41:01.352Z",
+    "modified": "2021-08-23T22:41:01.353Z",
+    "user": 9,
+    "group_hitman": 1
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 5,
+  "fields": {
+    "created": "2021-08-23T22:41:08.152Z",
+    "modified": "2021-08-23T22:41:08.153Z",
+    "user": 10,
+    "group_hitman": 2
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 6,
+  "fields": {
+    "created": "2021-08-23T22:41:13.149Z",
+    "modified": "2021-08-23T22:41:13.149Z",
+    "user": 11,
+    "group_hitman": 3
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 7,
+  "fields": {
+    "created": "2021-08-23T22:41:18.178Z",
+    "modified": "2021-08-23T22:41:18.178Z",
+    "user": 12,
+    "group_hitman": 1
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 8,
+  "fields": {
+    "created": "2021-08-23T22:41:22.733Z",
+    "modified": "2021-08-23T22:41:22.733Z",
+    "user": 13,
+    "group_hitman": 2
+  }
+},
+{
+  "model": "accounts.profilehitman",
+  "pk": 9,
+  "fields": {
+    "created": "2021-08-23T22:41:27.618Z",
+    "modified": "2021-08-23T22:41:27.618Z",
+    "user": 14,
+    "group_hitman": 3
   }
 }
 ]
