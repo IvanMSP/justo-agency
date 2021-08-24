@@ -2,7 +2,7 @@
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from django.views.generic.base import View
 
 # Owner
@@ -74,3 +74,36 @@ class HitDetailView(LoginRequiredMixin, View):
         except Exception as e:
             messages.info(request, f"{e}")
             return redirect("hits")
+
+
+class CreateHitView(LoginRequiredMixin, View):
+    template_name = "hits/create-hit.html"
+
+    def get(self, request):
+        # TODO: Implementar django Permissions from register view
+        if request.user.is_hitman:
+            messages.info(request, "No tienes permiso para crear un Hit :/")
+            return redirect("hits")
+        kwargs = {"user": request.user}
+        form = HitForm(**kwargs)
+        context = {
+            "form": form,
+        }
+        return render(request, self.template_name, context)
+
+    def post(self, request):
+        kwargs = {"user": request.user}
+        form = HitForm(request.POST, **kwargs)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                "¡Hit creado correctamente!",
+            )
+            return redirect("hits")
+        if form.errors:
+            for field in form:
+                for error in field.errors:
+                    messages.info(request, error)
+        context = {"form": HitForm(**kwargs)}
+        return render(request, self.template_name, context)
