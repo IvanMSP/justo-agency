@@ -111,7 +111,7 @@ venv.bak/
 .mypy_cache/
 
 # Migrations
-migrations/
+#migrations/
 
 # Static Files
 # static/
